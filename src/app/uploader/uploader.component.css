@@ -1,0 +1,11 @@
+.input_fileupload--hidden{
+  display:none;
+}
+ul li  {
+  list-style-type: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+ul{
+  display:flex;
+}

@@ -1,0 +1,39 @@
+<mat-card>
+  <!-- <form >
+    <label for="img">Select image:</label>
+    <input  type="file" id="img" name="img" accept="image/*" >
+    <button mat-raised-button color="primary">Primary</button>
+
+  </form> -->
+  <ul>
+ <li>
+   <div> 
+   <button mat-raised-button color="primary"
+        (click)="onClick($event)"
+>
+  <mat-icon>add</mat-icon>
+  {{chooseLabel}}</button>
+<input #fileUpload
+       type="file"
+       class="input_fileupload--hidden"
+       (input)="onInput($event)"
+       (change)="onFileSelected($event)"
+       [accept]="accept"
+>
+ </div></li>
+<div *ngFor="let f of files">
+  <span>{{f.name}}</span>
+  <button mat-icon-button
+          color="primary"
+          [attr.title]="deleteButtonLabel?deleteButtonLabel:null"
+          (click)="removeFile(event,f)"
+  >
+    <mat-icon>{{deleteButtonIcon}}</mat-icon>
+  </button>
+</div>
+<li>
+  <div> <button  mat-raised-button color="primary" (click)="upload()" >upload</button> </div
+  ></li>
+</ul>
+<img [src]="ImageData" height="100px" width="100px" alt="your image" />
+</mat-card>
